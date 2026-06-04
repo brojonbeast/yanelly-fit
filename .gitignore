@@ -1,0 +1,6 @@
+# OS / editor junk we don't want in the repo
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

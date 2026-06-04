@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--
+  Yanelly Fuels — landing page
+  ----------------------------------------------------------------------------
+  This is the whole website. It's one HTML file plus styles.css and script.js.
+  No build tools, no installs. To edit the words on the page, just find the
+  text below and change it. To add things (like a new recipe), copy an existing
+  block and change the text inside it.
+
+  Tip: you can ask Claude things like
+       "add a new recipe card for overnight oats in the Recipes section"
+       "change the hero headline to ..."
+  and it will edit this file for you.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== Browser tab title + search-engine description ===== -->
+  <title>Yanelly Fuels — Nutrition made simple</title>
+  <meta
+    name="description"
+    content="Simple, no-overwhelm nutrition guidance and free guides from Yanelly Garza, RD2B. Learn how to build balanced meals, find protein/carb/fat sources, and get easy recipe ideas."
+  />
+
+  <!-- ===== How it looks when shared on social media ===== -->
+  <meta property="og:title" content="Yanelly Fuels — Nutrition made simple" />
+  <meta property="og:description" content="Free, simple nutrition guides to help you fuel your life without the overwhelm." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon: a little avocado, matching her brand -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥑</text></svg>" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- ========================================================================
+       NAVIGATION BAR (sticks to the top of the screen)
+  ========================================================================= -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">yanelly<span>fuels</span></a>
+
+      <!-- Hamburger button — only shows on phones -->
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__links">
+        <a href="#about">About</a>
+        <a href="#basics">Nutrition Basics</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#guides">Free Guides</a>
+        <a href="#connect" class="nav__cta">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ======================================================================
+         1. HERO  — the first thing people see
+    ======================================================================= -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">🥑 🍓 RD2B · Lifting &amp; Fueling</p>
+          <h1>Nutrition, made&nbsp;simple.</h1>
+          <p class="hero__sub">
+            Hi, I'm Yanelly. I help you fuel your body and reach your goals
+            without the information overload. Real food, real talk, no fad diets.
+          </p>
+          <div class="hero__buttons">
+            <a href="#guides" class="btn btn--primary">Get the free guides</a>
+            <a href="#basics" class="btn btn--ghost">Start with the basics</a>
+          </div>
+        </div>
+
+        <!-- Photo: replace the file at images/yanelly.jpg with her real photo.
+             Until then this shows a friendly placeholder gradient. -->
+        <div class="hero__photo">
+          <img
+            src="images/yanelly.jpg"
+            alt="Yanelly Garza"
+            onerror="this.classList.add('is-missing'); this.alt='Add your photo at images/yanelly.jpg';"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. ABOUT
+    ======================================================================= -->
+    <section class="section" id="about">
+      <div class="container about">
+        <h2 class="section__title">A little about me</h2>
+        <p class="about__lead">
+          I'm a Registered Dietitian-to-be (RD2B) studying nutrition at the
+          University of Houston, Class of 2026. My mission is simple: cut through
+          the noise. There's so much confusing, contradictory nutrition advice
+          out there — my goal is to make it easy to understand so you can
+          actually use it.
+        </p>
+        <p>
+          Whether you're trying to build muscle, eat more balanced, or just feel
+          better, you don't need a complicated plan. You need a few solid basics
+          you can repeat. That's what this page is for.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. NUTRITION BASICS  — the core teaching content
+         Each "card" is one topic. Copy a <article class="card"> block to add
+         a new one.
+    ======================================================================= -->
+    <section class="section section--tint" id="basics">
+      <div class="container">
+        <h2 class="section__title">Nutrition basics</h2>
+        <p class="section__intro">
+          Start here. These are the fundamentals that 90% of healthy eating
+          comes down to.
+        </p>
+
+        <div class="cards">
+          <!-- Card: Balanced plate -->
+          <article class="card">
+            <div class="card__icon">🍽️</div>
+            <h3>How to build a balanced meal</h3>
+            <p>The easiest framework — just picture your plate in sections:</p>
+            <ul>
+              <li><strong>½ plate</strong> — fruits &amp; veggies (color + fiber)</li>
+              <li><strong>¼ plate</strong> — protein (keeps you full, builds muscle)</li>
+              <li><strong>¼ plate</strong> — carbs (your body's main energy)</li>
+              <li>Add a thumb of <strong>healthy fats</strong> &amp; water</li>
+            </ul>
+          </article>
+
+          <!-- Card: Protein -->
+          <article class="card">
+            <div class="card__icon">🍗</div>
+            <h3>Protein sources</h3>
+            <p>Builds and repairs muscle, keeps you full longest.</p>
+            <ul>
+              <li>Chicken, turkey, lean beef</li>
+              <li>Eggs &amp; egg whites</li>
+              <li>Greek yogurt &amp; cottage cheese</li>
+              <li>Fish &amp; canned tuna</li>
+              <li>Beans, lentils, tofu, edamame</li>
+            </ul>
+          </article>
+
+          <!-- Card: Carbs -->
+          <article class="card">
+            <div class="card__icon">🍠</div>
+            <h3>Carb sources</h3>
+            <p>Your main fuel — especially around workouts.</p>
+            <ul>
+              <li>Rice, oats, quinoa</li>
+              <li>Potatoes &amp; sweet potatoes</li>
+              <li>Whole-grain bread &amp; pasta</li>
+              <li>Fruit &amp; starchy veggies</li>
+              <li>Beans &amp; lentils (also protein!)</li>
+            </ul>
+          </article>
+
+          <!-- Card: Fats -->
+          <article class="card">
+            <div class="card__icon">🥑</div>
+            <h3>Healthy fat sources</h3>
+            <p>Supports hormones, brain, and keeps meals satisfying.</p>
+            <ul>
+              <li>Avocado &amp; olive oil</li>
+              <li>Nuts, seeds &amp; nut butters</li>
+              <li>Salmon &amp; other fatty fish</li>
+              <li>Cheese &amp; whole eggs</li>
+            </ul>
+          </article>
+
+          <!-- Card: Grocery staples -->
+          <article class="card">
+            <div class="card__icon">🛒</div>
+            <h3>Grocery staples</h3>
+            <p>Keep these on hand and a good meal is always 10 minutes away.</p>
+            <ul>
+              <li>Chicken breast, eggs, ground turkey</li>
+              <li>Greek yogurt, cottage cheese</li>
+              <li>Rice, oats, tortillas</li>
+              <li>Frozen veggies &amp; fruit</li>
+              <li>Canned tuna, beans, peanut butter</li>
+            </ul>
+          </article>
+
+          <!-- Card: Myths / basics explained simply -->
+          <article class="card">
+            <div class="card__icon">💡</div>
+            <h3>Basics, explained simply</h3>
+            <ul>
+              <li><strong>Calories</strong> = energy. Balance them with your goal.</li>
+              <li><strong>No food is "bad."</strong> It's about overall pattern.</li>
+              <li><strong>Protein + fiber</strong> = the fullness power couple.</li>
+              <li><strong>Consistency &gt; perfection.</strong> Always.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. RECIPES / MEAL INSPIRATION
+    ======================================================================= -->
+    <section class="section" id="recipes">
+      <div class="container">
+        <h2 class="section__title">Easy meal inspiration</h2>
+        <p class="section__intro">
+          Simple, balanced meals I actually eat. Mix and match the proteins,
+          carbs, and veggies you like.
+        </p>
+
+        <div class="cards">
+          <!-- Recipe card — copy this block to add another recipe -->
+          <article class="card card--recipe">
+            <div class="card__tag">High protein</div>
+            <h3>Cottage cheese bowl</h3>
+            <p>
+              Cottage cheese + berries + a drizzle of honey + granola.
+              ~25g protein, takes 2 minutes.
+            </p>
+          </article>
+
+          <article class="card card--recipe">
+            <div class="card__tag">Post-workout</div>
+            <h3>Chicken &amp; rice bowl</h3>
+            <p>
+              Chicken breast, rice, kimchi or veggies, and a sauce you love.
+              Balanced, filling, meal-preps great.
+            </p>
+          </article>
+
+          <article class="card card--recipe">
+            <div class="card__tag">5 minutes</div>
+            <h3>Tuna crunch wrap</h3>
+            <p>
+              Canned tuna + Greek yogurt instead of mayo, on a tortilla with
+              spinach. Quick high-protein lunch.
+            </p>
+          </article>
+
+          <article class="card card--recipe">
+            <div class="card__tag">Breakfast</div>
+            <h3>Overnight oats</h3>
+            <p>
+              Oats + milk + Greek yogurt + chia + fruit. Stir at night,
+              grab it in the morning.
+            </p>
+          </article>
+        </div>
+
+        <p class="recipes__cta">
+          Want more meal ideas? I post them on Instagram →
+          <a href="https://instagram.com/yanellyfuels" target="_blank" rel="noopener">@yanellyfuels</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. FREE GUIDES / DOWNLOADS  (the lead magnets)
+         To make a guide downloadable: put the PDF in a "guides" folder and
+         change href="#" to href="guides/your-file.pdf".
+    ======================================================================= -->
+    <section class="section section--tint" id="guides">
+      <div class="container">
+        <h2 class="section__title">Free guides</h2>
+        <p class="section__intro">
+          Grab these free resources to make eating well even easier. (More on
+          the way!)
+        </p>
+
+        <div class="guides">
+          <article class="guide">
+            <div class="guide__icon">📋</div>
+            <div class="guide__body">
+              <h3>The Balanced Plate Cheat Sheet</h3>
+              <p>A one-page printable to build any meal in seconds.</p>
+            </div>
+            <a href="#" class="btn btn--primary btn--sm">Coming soon</a>
+          </article>
+
+          <article class="guide">
+            <div class="guide__icon">🛒</div>
+            <div class="guide__body">
+              <h3>High-Protein Grocery List</h3>
+              <p>Exactly what to put in your cart, organized by aisle.</p>
+            </div>
+            <a href="#" class="btn btn--primary btn--sm">Coming soon</a>
+          </article>
+
+          <article class="guide">
+            <div class="guide__icon">🍳</div>
+            <div class="guide__body">
+              <h3>10 Easy High-Protein Meals</h3>
+              <p>Simple recipes you can make on repeat.</p>
+            </div>
+            <a href="#" class="btn btn--primary btn--sm">Coming soon</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. CONNECT / SOCIAL + EMAIL
+    ======================================================================= -->
+    <section class="section connect" id="connect">
+      <div class="container connect__inner">
+        <h2 class="section__title">Let's connect</h2>
+        <p class="section__intro">
+          Follow along for daily nutrition tips, meals, and gym content — and be
+          the first to know when new guides drop.
+        </p>
+
+        <div class="connect__links">
+          <a class="social" href="https://instagram.com/yanellyfuels" target="_blank" rel="noopener">
+            <span class="social__icon">📸</span> Instagram
+          </a>
+          <a class="social" href="https://instagram.com/teamfortitude_" target="_blank" rel="noopener">
+            <span class="social__icon">💪</span> Team Fortitude
+          </a>
+          <a class="social" href="mailto:hello@yanellyfuels.com">
+            <span class="social__icon">✉️</span> Email me
+          </a>
+        </div>
+
+        <!-- Simple email signup. Right now it just shows a thank-you message.
+             When ready, connect it to a free tool like Mailchimp, ConvertKit,
+             or Beehiiv to actually collect emails. -->
+        <form class="signup" id="signup-form">
+          <label for="email" class="signup__label">Join the email list</label>
+          <div class="signup__row">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@email.com"
+              required
+            />
+            <button type="submit" class="btn btn--primary">Sign up</button>
+          </div>
+          <p class="signup__note" id="signup-note" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+  ========================================================================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">yanelly<span>fuels</span> 🥑🍓</p>
+      <p class="footer__note">
+        Educational content only — not medical or individualized nutrition
+        advice. <em>1:1 services coming soon.</em>
+      </p>
+      <p class="footer__copy">© <span id="year"></span> Yanelly Garza</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
