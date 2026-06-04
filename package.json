@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "review": "node review.mjs",
-    "cheatsheet": "node make-cheatsheet.mjs"
+    "cheatsheet": "node make-cheatsheet.mjs",
+    "handoff": "node make-handoff.mjs"
   },
   "repository": {
     "type": "git",

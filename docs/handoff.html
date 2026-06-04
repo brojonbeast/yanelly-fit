@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Yanelly Fuels — Website Handoff Guide</title>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+  @page { size: letter; margin: 56px 62px; }
+  :root{
+    --paper:#FBF6EC; --ink:#26331F; --ink-2:#55604A; --green:#38502F; --leaf:#5E7B3E;
+    --blush:#E7B6AC; --berry:#BC6157; --line:#DfD6c4; --card:#F1ECDD; --sage:#EAF0E0;
+    --display:"Fraunces",Georgia,serif; --body:"Hanken Grotesk",system-ui,sans-serif; --mono:"Space Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--body);color:var(--ink);font-size:13px;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#fff;}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.1;letter-spacing:-0.01em;}
+  h1{font-size:34px;margin-bottom:6px;}
+  h1 em{font-style:italic;color:var(--berry);}
+  .sub{font-size:14px;color:var(--ink-2);margin-bottom:6px;}
+  .meta{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--leaf);}
+  .intro{font-size:13.5px;color:var(--ink-2);margin:16px 0 6px;max-width:62ch;}
+  .rule{height:2px;background:var(--ink);margin:14px 0 22px;}
+  h2{font-size:19px;margin:24px 0 4px;padding-top:14px;border-top:2px solid var(--ink);}
+  h2 .n{font-family:var(--mono);font-size:11px;color:var(--leaf);font-weight:700;vertical-align:middle;margin-right:8px;}
+  h3{font-size:14px;margin:12px 0 4px;color:var(--green);}
+  p{margin:6px 0;}
+  ol,ul{margin:8px 0 8px 4px;}
+  ol{counter-reset:step;list-style:none;}
+  ol li{counter-increment:step;position:relative;padding:5px 0 5px 30px;}
+  ol li::before{content:counter(step);position:absolute;left:0;top:5px;width:20px;height:20px;background:var(--green);color:var(--paper);border-radius:50%;font-family:var(--mono);font-size:10px;font-weight:700;display:grid;place-content:center;}
+  ul.check{list-style:none;margin-left:0;}
+  ul.check li{position:relative;padding:5px 0 5px 26px;}
+  ul.check li::before{content:"";position:absolute;left:0;top:6px;width:13px;height:13px;border:2px solid var(--leaf);border-radius:3px;}
+  ul.bul{list-style:none;margin-left:0;}
+  ul.bul li{position:relative;padding:4px 0 4px 18px;}
+  ul.bul li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--berry);}
+  code,.path{font-family:var(--mono);font-size:11.5px;background:var(--card);padding:1px 5px;border-radius:4px;color:var(--green);}
+  .callout{background:var(--sage);border-left:3px solid var(--leaf);border-radius:0 8px 8px 0;padding:11px 15px;margin:12px 0;font-size:12.5px;}
+  .callout.warn{background:#FBEAE5;border-left-color:var(--berry);}
+  .callout b{color:var(--green);}
+  .callout.warn b{color:var(--berry);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px 26px;}
+  section{break-inside:avoid;}
+  .foot{margin-top:26px;padding-top:12px;border-top:2px solid var(--ink);font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-2);display:flex;justify-content:space-between;}
+  .lede-brand{font-family:var(--display);font-size:15px;}
+  .lede-brand b{color:var(--leaf);font-weight:500;}
+</style>
+</head>
+<body>
+  <p class="meta">Website Handoff Guide · 2026</p>
+  <h1>Yanelly Fuels — <em>Handoff</em> Guide</h1>
+  <p class="sub">Passing the website over to Yanelly, and building it with ChatGPT Codex.</p>
+  <p class="intro">This walks through giving Yanelly full ownership of the website so she controls it, keeps it online for free, and can keep improving it with ChatGPT Codex — while Jon stays on as a helper (without owning it). The whole thing takes about <b>15&nbsp;minutes</b> and needs no coding.</p>
+  <div class="rule"></div>
+
+  <section>
+    <h3>What Yanelly is getting</h3>
+    <ul class="bul">
+      <li>A live website — currently at <span class="path">brojonbeast.github.io/yanelly-fit</span></li>
+      <li>All the source files, kept in a GitHub <b>repository</b> ("repo")</li>
+      <li>Automatic publishing &amp; free hosting — any approved change goes live in about a minute</li>
+      <li>A built-in email-capture funnel (the free <b>Balanced Plate Cheat Sheet</b>) ready to connect to Kit</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Before you start — quick checklist</h3>
+    <ul class="check">
+      <li>Yanelly has a free <b>GitHub</b> account (<span class="path">github.com</span> → Sign up) — note her username.</li>
+      <li>Yanelly has a <b>ChatGPT plan that includes Codex</b> (Plus, Pro, or Business).</li>
+      <li>Jon knows his GitHub username (<span class="path">brojonbeast</span>) so he can be re-added afterward.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">A</span>Jon transfers ownership to Yanelly &nbsp;<span style="font-family:var(--mono);font-size:10px;color:var(--ink-2)">~5 min</span></h2>
+    <p>On Jon's computer, signed in to GitHub:</p>
+    <ol>
+      <li>Open the repo: <span class="path">github.com/brojonbeast/yanelly-fit</span></li>
+      <li>Click <b>Settings</b> (top of the repo), then scroll to the bottom to the red <b>"Danger Zone."</b></li>
+      <li>Click <b>Transfer</b>.</li>
+      <li>Type the repo name to confirm, then enter <b>Yanelly's GitHub username</b> as the new owner.</li>
+      <li>Confirm. GitHub emails Yanelly a request to accept the transfer.</li>
+    </ol>
+    <div class="callout"><b>Nothing is lost.</b> All the files, history, and settings move with the repo — it's the same project, just under Yanelly's account.</div>
+  </section>
+
+  <section>
+    <h2><span class="n">B</span>Yanelly accepts &amp; switches the site back on &nbsp;<span style="font-family:var(--mono);font-size:10px;color:var(--ink-2)">~5 min</span></h2>
+    <ol>
+      <li>Yanelly opens the email (or her GitHub notifications) and clicks <b>Accept</b>. The repo now lives at <span class="path">github.com/&lt;her-username&gt;/yanelly-fit</span>.</li>
+      <li>Make sure it's <b>Public</b>: Settings → General → (bottom) Change visibility → Public. <em>Required for free hosting.</em></li>
+      <li>Turn the website on: Settings → <b>Pages</b> → Build and deployment → <b>Source = "GitHub Actions."</b></li>
+      <li>If prompted, allow Actions: Settings → Actions → General → <b>Allow all actions</b>.</li>
+      <li>Wait 1–2 minutes. The site is now live at <span class="path">https://&lt;her-username&gt;.github.io/yanelly-fit/</span></li>
+    </ol>
+    <div class="callout warn"><b>Heads up — the web address changes.</b> It moves from <span class="path">brojonbeast.github.io/…</span> to Yanelly's username. Update the <b>link in her Instagram bio</b> to the new address. (Later, a custom domain like <span class="path">yanellyfuels.com</span> would make the address permanent so this never happens again.)</div>
+  </section>
+
+  <section>
+    <h2><span class="n">C</span>Keep Jon's access &nbsp;<span style="font-family:var(--mono);font-size:10px;color:var(--ink-2)">~2 min</span></h2>
+    <p>So Jon can still help without owning it — on <b>Yanelly's</b> repo:</p>
+    <ol>
+      <li>Settings → <b>Collaborators</b> (and teams) → <b>Add people</b>.</li>
+      <li>Enter <span class="path">brojonbeast</span> and choose a role:
+        <ul class="bul">
+          <li><b>Admin</b> — full help, including settings (recommended).</li>
+          <li><b>Write</b> — can edit files and merge changes.</li>
+        </ul>
+      </li>
+      <li>Jon accepts the email invite. Done — he can jump in anytime.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="n">D</span>Connect ChatGPT Codex to the repo &nbsp;<span style="font-family:var(--mono);font-size:10px;color:var(--ink-2)">~5 min</span></h2>
+    <ol>
+      <li>In ChatGPT, open <b>Codex</b> (the coding tool in the sidebar).</li>
+      <li><b>Connect GitHub</b> — authorize the ChatGPT/Codex GitHub app for her account.</li>
+      <li>Grant it access to the <span class="path">yanelly-fit</span> repo (you can limit it to just this one).</li>
+      <li>Select <span class="path">yanelly-fit</span> as the working repo; Codex sets up its environment.</li>
+      <li>Give it a task (see examples below). Codex works on a copy and opens a <b>Pull Request</b> — a proposed change — on GitHub for you to approve.</li>
+    </ol>
+    <div class="callout">Button names inside ChatGPT may shift over time; if something looks different, search OpenAI's Codex help. Codex requires a ChatGPT plan that includes it.</div>
+  </section>
+
+  <section>
+    <h2><span class="n">★</span>How building works day-to-day</h2>
+    <p>The flow is always the same:</p>
+    <p style="font-family:var(--mono);font-size:11.5px;background:var(--card);padding:10px 14px;border-radius:8px;">Ask Codex → it opens a Pull Request → you review it on GitHub → click <b>Merge</b> → the site updates itself in ~1 minute.</p>
+    <div class="callout"><b>The golden rule:</b> a change only goes live once it's <b>merged into the "main" branch</b>. Until then, the live site is untouched — so you can experiment safely.</div>
+    <p>You can also make quick text edits without Codex: on GitHub, open a file → click the <b>pencil</b> icon → edit → <b>Commit changes</b>.</p>
+  </section>
+
+  <section>
+    <h3>Things you can ask Codex</h3>
+    <ul class="bul grid2">
+      <li>"Add a recipe card for protein pancakes."</li>
+      <li>"Change the hero headline to '…'."</li>
+      <li>"Add an FAQ: 'Do you offer meal plans?'"</li>
+      <li>"Make the strawberry accent a deeper berry."</li>
+      <li>"Add a new free guide called 'Meal Prep 101'."</li>
+      <li>"Update my About section with this text: …"</li>
+    </ul>
+    <p style="font-size:12px;color:var(--ink-2)"><b>Tip:</b> ask for one change at a time, and have Codex describe or preview it before you merge.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">→</span>Next win: turn on email capture (Kit)</h2>
+    <p>The site already has the opt-in forms and the free cheat sheet built in — they just need to be connected to an email tool so signups are actually saved. Recommended: <b>Kit</b> (free up to 10,000 subscribers, built for creators).</p>
+    <ol>
+      <li>Yanelly creates her own free <b>Kit</b> account at <span class="path">kit.com</span>.</li>
+      <li>In Kit, make a form and set it to <b>automatically deliver the cheat-sheet PDF</b> by email.</li>
+      <li>Ask Codex: <em>"wire the opt-in forms on my site to my Kit account"</em> (she'll paste her Kit form details).</li>
+    </ol>
+    <p>After that, every signup becomes a subscriber <b>and</b> gets the cheat sheet automatically — the foundation for newsletters, digital products, and 1:1 coaching later.</p>
+  </section>
+
+  <section>
+    <h3>Mini-glossary</h3>
+    <ul class="bul grid2">
+      <li><b>Repository (repo)</b> — the folder of all the site's files + history.</li>
+      <li><b>Branch</b> — a safe copy to make changes on.</li>
+      <li><b>Pull Request (PR)</b> — a proposed change you review before it's live.</li>
+      <li><b>Merge</b> — approving a PR so it becomes part of the live site.</li>
+      <li><b>GitHub Pages</b> — the free hosting that serves the website.</li>
+      <li><b>main</b> — the live version of the site.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Need help?</h3>
+    <p>Jon stays on as a collaborator and can step in anytime. If anything looks broken, describe what you see (a screenshot helps) and either Codex or Jon can fix it. Nothing you do in a Pull Request can break the live site until it's merged — so explore freely.</p>
+  </section>
+
+  <div class="foot"><span class="lede-brand">Yanelly<b>Fuels</b></span><span>Website Handoff Guide · 2026</span></div>
+</body>
+</html>
