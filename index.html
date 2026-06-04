@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <!--
-  Yanelly Fuels — landing page  ·  "Fresh Editorial" design
+  Yanelly Fuels — landing page  ·  editorial "test-kitchen" design
   ----------------------------------------------------------------------------
-  This is the whole website: this file + styles.css + script.js. No build tools,
-  no installs. To change words, find the text below and edit it. To add things
-  (a recipe, a guide, an FAQ), copy an existing block and change the text inside.
-
-  Easiest way to edit: open this project in Claude and just ask, e.g.
-       "add a recipe card for protein pancakes"
-       "change the hero headline to ..."
-       "add an FAQ about meal prep"
+  The whole site is this file + styles.css + script.js. No build tools.
+  Edit words by finding the text below. Add things by copying an existing block.
+  Or open this in Claude and ask, e.g. "add a recipe card for protein pancakes".
 -->
 <html lang="en" class="no-js">
 <head>
@@ -18,165 +13,146 @@
 
   <title>Yanelly Fuels — Nutrition, made simple</title>
   <meta name="description" content="Simple, no-overwhelm nutrition guidance and free guides from Yanelly Garza, RD2B. Build balanced meals, find protein/carb/fat sources, and get easy recipe ideas." />
-
   <meta property="og:title" content="Yanelly Fuels — Nutrition, made simple" />
   <meta property="og:description" content="Free, simple nutrition guides to help you fuel your life without the overwhelm." />
   <meta property="og:type" content="website" />
-
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥑</text></svg>" />
 
-  <!-- Swap the no-js class for js as early as possible so scroll animations
-       only hide content when JavaScript is actually available. -->
   <script>document.documentElement.className = "js";</script>
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <!-- Soft film grain that sits over the whole page for a premium, printed feel -->
   <div class="grain" aria-hidden="true"></div>
 
   <!-- ========================================================================
-       NAVIGATION  (sticky; shrinks slightly once you scroll)
+       NAVIGATION
   ========================================================================= -->
   <header class="nav" id="top" data-nav>
-    <div class="container nav__inner">
-      <a href="#top" class="nav__logo">Yanelly<span>Fuels</span></a>
-
+    <div class="wrap nav__inner">
+      <a href="#top" class="nav__logo">Yanelly Fuels</a>
       <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-
       <nav class="nav__links">
         <a href="#about">About</a>
         <a href="#basics">Basics</a>
         <a href="#recipes">Recipes</a>
         <a href="#guides">Guides</a>
         <a href="#faq">FAQ</a>
-        <a href="#connect" class="nav__cta">Connect</a>
+        <a href="#connect" class="nav__cta">Connect &rarr;</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- ======================================================================
-         1. HERO
+         HERO
     ======================================================================= -->
     <section class="hero">
-      <!-- Decorative blobs floating behind the hero -->
-      <span class="hero__blob hero__blob--1" aria-hidden="true"></span>
-      <span class="hero__blob hero__blob--2" aria-hidden="true"></span>
-
-      <div class="container hero__inner">
-        <div class="hero__text" data-reveal>
-          <p class="eyebrow"><span class="eyebrow__dot"></span> RD2B · Lifting &amp; Fueling</p>
-          <h1 class="hero__title">
-            Nutrition,<br />
-            made <em>simple</em>.
-          </h1>
-          <p class="hero__sub">
-            Hi, I'm Yanelly. I help you fuel your body and reach your goals
-            without the information overload — real food, real talk, zero fad diets.
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <p class="tag-row" data-reveal>
+            <span class="tag">RD2B</span>
+            <span class="tag">Lifting &amp; Fueling</span>
+            <span class="tag">Houston</span>
           </p>
-          <div class="hero__buttons">
-            <a href="#guides" class="btn btn--primary">Get the free guides</a>
-            <a href="#basics" class="btn btn--ghost">Start with the basics →</a>
+          <h1 class="hero__title" data-reveal>
+            Nutrition,<br />
+            made <span class="squiggle">simple<svg viewBox="0 0 240 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C 45 3, 80 3, 120 8 S 200 14, 237 6" /></svg></span>.
+          </h1>
+          <p class="hero__sub" data-reveal>
+            I'm Yanelly — a dietitian-in-training who helps you fuel your body
+            and hit your goals without the noise. Real food, plain language,
+            no fad diets.
+          </p>
+          <div class="hero__actions" data-reveal>
+            <a href="#guides" class="btn">Get the free guides</a>
+            <a href="#basics" class="arrow-link">Start with the basics <span>&rarr;</span></a>
           </div>
-          <p class="hero__trust">🎓 University of Houston '26 &nbsp;·&nbsp; 🥑 Registered Dietitian-to-be</p>
         </div>
 
-        <!-- Photo in an organic blob frame, with floating "ingredient" chips.
-             Replace images/yanelly.jpg with her real photo (portrait works best). -->
-        <div class="hero__media" data-reveal>
-          <div class="hero__photo">
-            <!-- If images/yanelly.jpg is missing, the image hides and the
-                 branded placeholder below shows instead (so it always looks
-                 intentional, never broken). -->
+        <!-- Photo: framed with a solid offset block behind it (editorial style).
+             Drop her photo in as images/yanelly.jpg and it appears here. -->
+        <figure class="hero__figure" data-reveal>
+          <div class="frame">
             <img
               src="images/yanelly.jpg"
               alt="Yanelly Garza"
-              onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
+              onerror="this.style.display='none'; this.closest('.frame').classList.add('frame--empty');"
             />
-            <div class="hero__photo-ph" hidden aria-hidden="true">
-              <span class="hero__photo-emoji">🥑🍓</span>
-              <p>Yanelly Garza</p>
-              <small>Lifting &amp; Fueling</small>
-            </div>
+            <div class="frame__ph" aria-hidden="true"><span>YG</span></div>
           </div>
-          <span class="chip chip--1">🍓 High protein</span>
-          <span class="chip chip--2">🥗 Balanced</span>
-          <span class="chip chip--3">⚡ Easy</span>
-        </div>
+          <figcaption>Yanelly Garza — University of Houston '26</figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- ======================================================================
-         2. MARQUEE  (slow-scrolling keyword strip)
+         TICKER
     ======================================================================= -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <!-- The list is duplicated so the loop is seamless -->
-        <span>Balanced meals ✺ High-protein ✺ Easy recipes ✺ Grocery staples ✺ No fad diets ✺ Real food ✺ Fuel your goals ✺</span>
-        <span>Balanced meals ✺ High-protein ✺ Easy recipes ✺ Grocery staples ✺ No fad diets ✺ Real food ✺ Fuel your goals ✺</span>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Balanced meals — High protein — Easy recipes — Grocery staples — No fad diets — Real food — Fuel your goals —&nbsp;</span>
+        <span>Balanced meals — High protein — Easy recipes — Grocery staples — No fad diets — Real food — Fuel your goals —&nbsp;</span>
       </div>
     </div>
 
     <!-- ======================================================================
-         3. ABOUT
+         ABOUT
     ======================================================================= -->
-    <section class="section about" id="about">
-      <div class="container about__grid">
-        <div class="about__side" data-reveal>
-          <span class="kicker">About</span>
-          <p class="signature">— Yanelly</p>
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="sec-num">01</span>
+          <span class="sec-label">About</span>
         </div>
-        <div class="about__body" data-reveal>
-          <h2 class="about__lead">
-            There's so much confusing nutrition advice out there. My goal is to
-            make it <em>simple</em> enough that you'll actually use it.
-          </h2>
-          <p>
+        <div class="about" data-reveal>
+          <p class="about__lead">
+            There's an overwhelming amount of confusing, contradictory nutrition
+            advice out there. My whole goal is to cut through it — to make eating
+            well simple enough that you'll actually do it.
+          </p>
+          <p class="about__body">
             I'm a Registered Dietitian-to-be studying nutrition at the University
             of Houston, Class of 2026. Whether you're building muscle, eating more
-            balanced, or just trying to feel better, you don't need a complicated
-            plan — you need a few solid basics you can repeat. That's what this
-            place is for.
+            balanced, or just trying to feel better day to day, you don't need a
+            complicated plan. You need a few solid fundamentals you can repeat on
+            autopilot. That's what lives here — and it's all free.
           </p>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         4. NUTRITION BASICS  (the core teaching content)
-         Copy an <article class="card"> block to add a new topic.
+         BASICS  (numbered, no emoji icons)
+         Copy an <article class="entry"> block to add a topic.
     ======================================================================= -->
-    <section class="section section--panel" id="basics">
-      <div class="container">
-        <header class="section__head" data-reveal>
-          <span class="kicker">The fundamentals</span>
-          <h2 class="section__title">Nutrition basics</h2>
-          <p class="section__intro">
-            Start here. About 90% of healthy eating comes down to these few ideas.
-          </p>
-        </header>
+    <section class="section section--alt" id="basics">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="sec-num">02</span>
+          <span class="sec-label">The fundamentals</span>
+          <h2 class="sec-title">Nutrition basics</h2>
+        </div>
 
-        <div class="cards">
-          <article class="card" data-reveal>
-            <span class="card__icon">🍽️</span>
+        <div class="entries">
+          <article class="entry" data-reveal>
+            <span class="entry__no">01</span>
             <h3>Build a balanced meal</h3>
-            <p>Picture your plate in simple sections:</p>
+            <p>Picture your plate in sections — no weighing required:</p>
             <ul>
-              <li><strong>½</strong> fruits &amp; veggies — color + fiber</li>
-              <li><strong>¼</strong> protein — fullness + muscle</li>
-              <li><strong>¼</strong> carbs — your main energy</li>
-              <li>+ a thumb of <strong>healthy fats</strong> &amp; water</li>
+              <li><b>½</b> &nbsp;fruit &amp; veggies (color + fiber)</li>
+              <li><b>¼</b> &nbsp;protein (fullness + muscle)</li>
+              <li><b>¼</b> &nbsp;carbs (your main energy)</li>
+              <li><b>+</b> &nbsp;a thumb of healthy fat &amp; water</li>
             </ul>
           </article>
 
-          <article class="card" data-reveal>
-            <span class="card__icon">🍗</span>
+          <article class="entry" data-reveal>
+            <span class="entry__no">02</span>
             <h3>Protein sources</h3>
-            <p>Builds and repairs muscle, keeps you full longest.</p>
+            <p>Builds and repairs muscle; keeps you full longest.</p>
             <ul>
               <li>Chicken, turkey, lean beef</li>
               <li>Eggs &amp; egg whites</li>
@@ -185,8 +161,8 @@
             </ul>
           </article>
 
-          <article class="card" data-reveal>
-            <span class="card__icon">🍠</span>
+          <article class="entry" data-reveal>
+            <span class="entry__no">03</span>
             <h3>Carb sources</h3>
             <p>Your main fuel — especially around workouts.</p>
             <ul>
@@ -197,10 +173,10 @@
             </ul>
           </article>
 
-          <article class="card" data-reveal>
-            <span class="card__icon">🥑</span>
+          <article class="entry" data-reveal>
+            <span class="entry__no">04</span>
             <h3>Healthy fats</h3>
-            <p>Supports hormones and keeps meals satisfying.</p>
+            <p>Supports hormones; keeps meals satisfying.</p>
             <ul>
               <li>Avocado &amp; olive oil</li>
               <li>Nuts, seeds &amp; nut butter</li>
@@ -209,10 +185,10 @@
             </ul>
           </article>
 
-          <article class="card" data-reveal>
-            <span class="card__icon">🛒</span>
+          <article class="entry" data-reveal>
+            <span class="entry__no">05</span>
             <h3>Grocery staples</h3>
-            <p>Keep these around and a good meal is 10 minutes away.</p>
+            <p>Keep these in and a good meal is ten minutes away.</p>
             <ul>
               <li>Chicken, eggs, ground turkey</li>
               <li>Greek yogurt, cottage cheese</li>
@@ -221,14 +197,14 @@
             </ul>
           </article>
 
-          <article class="card" data-reveal>
-            <span class="card__icon">💡</span>
-            <h3>Explained simply</h3>
+          <article class="entry" data-reveal>
+            <span class="entry__no">06</span>
+            <h3>The short version</h3>
             <ul>
-              <li><strong>Calories</strong> = energy. Match them to your goal.</li>
-              <li><strong>No food is "bad."</strong> It's the overall pattern.</li>
-              <li><strong>Protein + fiber</strong> = the fullness power couple.</li>
-              <li><strong>Consistency &gt; perfection.</strong> Always.</li>
+              <li>Calories are energy — match them to your goal.</li>
+              <li>No food is "bad"; it's the overall pattern.</li>
+              <li>Protein + fiber = the fullness duo.</li>
+              <li>Consistency beats perfection. Always.</li>
             </ul>
           </article>
         </div>
@@ -236,198 +212,197 @@
     </section>
 
     <!-- ======================================================================
-         5. BALANCED PLATE FEATURE  (forest highlight band)
+         PLATE METHOD  (hand-drawn diagram, not a generic pie chart)
     ======================================================================= -->
-    <section class="plate">
-      <div class="container plate__inner">
-        <div class="plate__viz" data-reveal aria-hidden="true">
-          <div class="plate__ring">
-            <span class="plate__half">½ Veggies &amp; fruit</span>
-            <span class="plate__quarter plate__quarter--p">¼ Protein</span>
-            <span class="plate__quarter plate__quarter--c">¼ Carbs</span>
-          </div>
-        </div>
-        <div class="plate__text" data-reveal>
-          <span class="kicker kicker--light">The 30-second method</span>
+    <section class="plate-sec">
+      <div class="wrap plate-sec__inner">
+        <div class="plate-sec__text" data-reveal>
+          <span class="sec-num sec-num--invert">03</span>
           <h2>One plate. Three sections. Done.</h2>
           <p>
-            No weighing, no tracking, no math. Fill half your plate with veggies
-            and fruit, a quarter with protein, a quarter with carbs, and add a
-            little healthy fat. That's a balanced meal — every single time.
+            No tracking, no math. Half the plate veggies and fruit, a quarter
+            protein, a quarter carbs, plus a little healthy fat. That's a balanced
+            meal — every single time.
           </p>
-          <a href="#guides" class="btn btn--cream">Get the printable cheat sheet</a>
+          <a href="#guides" class="btn btn--invert">Get the printable cheat sheet</a>
+        </div>
+
+        <div class="plate-sec__viz" data-reveal>
+          <!-- Drawn plate diagram -->
+          <svg viewBox="0 0 320 320" class="plate" role="img" aria-label="A plate: half veggies and fruit, a quarter protein, a quarter carbs">
+            <path d="M160 160 L160 10 A150 150 0 0 0 160 310 Z" class="p-veg" />
+            <path d="M160 160 L310 160 A150 150 0 0 0 160 10 Z" class="p-pro" />
+            <path d="M160 160 L160 310 A150 150 0 0 0 310 160 Z" class="p-carb" />
+            <circle cx="160" cy="160" r="150" class="p-ring" />
+            <line x1="160" y1="10" x2="160" y2="310" class="p-line" />
+            <line x1="160" y1="160" x2="310" y2="160" class="p-line" />
+            <text x="86" y="150" class="p-frac">½</text>
+            <text x="86" y="178" class="p-name">VEGGIES<tspan x="86" dy="15">+ FRUIT</tspan></text>
+            <text x="232" y="92" class="p-frac p-frac--sm">¼</text>
+            <text x="232" y="110" class="p-name">PROTEIN</text>
+            <text x="232" y="214" class="p-frac p-frac--sm">¼</text>
+            <text x="232" y="232" class="p-name">CARBS</text>
+          </svg>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         6. RECIPES / MEAL INSPIRATION
+         RECIPES
     ======================================================================= -->
     <section class="section" id="recipes">
-      <div class="container">
-        <header class="section__head" data-reveal>
-          <span class="kicker">Meal inspiration</span>
-          <h2 class="section__title">Easy meals I actually eat</h2>
-          <p class="section__intro">
-            Mix and match the proteins, carbs, and veggies you like.
-          </p>
-        </header>
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="sec-num">04</span>
+          <span class="sec-label">Meal inspiration</span>
+          <h2 class="sec-title">Easy meals I actually eat</h2>
+        </div>
 
-        <div class="cards cards--recipes">
+        <div class="recipes">
           <article class="recipe" data-reveal>
-            <span class="recipe__tag">High protein</span>
+            <span class="recipe__meta">High protein · 2 min</span>
             <h3>Cottage cheese bowl</h3>
-            <p>Cottage cheese + berries + honey + granola. ~25g protein in 2 minutes.</p>
+            <p>Cottage cheese, berries, a drizzle of honey, granola. ~25g protein.</p>
           </article>
           <article class="recipe" data-reveal>
-            <span class="recipe__tag">Post-workout</span>
+            <span class="recipe__meta">Post-workout</span>
             <h3>Chicken &amp; rice bowl</h3>
-            <p>Chicken, rice, kimchi or veggies, and a sauce you love. Meal-preps great.</p>
+            <p>Chicken, rice, kimchi or veggies, a sauce you love. Meal-preps great.</p>
           </article>
           <article class="recipe" data-reveal>
-            <span class="recipe__tag">5 minutes</span>
+            <span class="recipe__meta">5 minutes</span>
             <h3>Tuna crunch wrap</h3>
-            <p>Tuna + Greek yogurt (not mayo) on a tortilla with spinach. Quick + high protein.</p>
+            <p>Tuna mixed with Greek yogurt (not mayo), spinach, on a tortilla.</p>
           </article>
           <article class="recipe" data-reveal>
-            <span class="recipe__tag">Breakfast</span>
+            <span class="recipe__meta">Breakfast</span>
             <h3>Overnight oats</h3>
-            <p>Oats + milk + Greek yogurt + chia + fruit. Stir at night, grab it at sunrise.</p>
+            <p>Oats, milk, Greek yogurt, chia, fruit. Stir at night, grab at sunrise.</p>
           </article>
         </div>
 
-        <p class="recipes__cta" data-reveal>
-          More meal ideas on Instagram →
-          <a href="https://instagram.com/yanellyfuels" target="_blank" rel="noopener">@yanellyfuels</a>
+        <p class="more-link" data-reveal>
+          More meal ideas on Instagram —
+          <a href="https://instagram.com/yanellyfuels" target="_blank" rel="noopener">@yanellyfuels &rarr;</a>
         </p>
       </div>
     </section>
 
     <!-- ======================================================================
-         7. FREE GUIDES / DOWNLOADS
-         To make a guide downloadable: drop the PDF in a "guides" folder and
-         change href="#" to href="guides/your-file.pdf" (and the button text).
+         GUIDES
     ======================================================================= -->
-    <section class="section section--panel" id="guides">
-      <div class="container">
-        <header class="section__head" data-reveal>
-          <span class="kicker">Free resources</span>
-          <h2 class="section__title">Free guides</h2>
-          <p class="section__intro">Grab these to make eating well even easier. More on the way!</p>
-        </header>
+    <section class="section section--alt" id="guides">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="sec-num">05</span>
+          <span class="sec-label">Free resources</span>
+          <h2 class="sec-title">Free guides</h2>
+        </div>
 
-        <div class="guides">
-          <article class="guide" data-reveal>
-            <span class="guide__icon">📋</span>
-            <div class="guide__body">
+        <ul class="guides" data-reveal>
+          <li class="guide">
+            <span class="guide__no">A</span>
+            <div class="guide__main">
               <h3>The Balanced Plate Cheat Sheet</h3>
               <p>A one-page printable to build any meal in seconds.</p>
             </div>
-            <a href="#" class="btn btn--primary btn--sm">Coming soon</a>
-          </article>
-          <article class="guide" data-reveal>
-            <span class="guide__icon">🛒</span>
-            <div class="guide__body">
+            <a href="#" class="guide__cta">Coming soon</a>
+          </li>
+          <li class="guide">
+            <span class="guide__no">B</span>
+            <div class="guide__main">
               <h3>High-Protein Grocery List</h3>
               <p>Exactly what to put in your cart, organized by aisle.</p>
             </div>
-            <a href="#" class="btn btn--primary btn--sm">Coming soon</a>
-          </article>
-          <article class="guide" data-reveal>
-            <span class="guide__icon">🍳</span>
-            <div class="guide__body">
+            <a href="#" class="guide__cta">Coming soon</a>
+          </li>
+          <li class="guide">
+            <span class="guide__no">C</span>
+            <div class="guide__main">
               <h3>10 Easy High-Protein Meals</h3>
               <p>Simple recipes you can make on repeat.</p>
             </div>
-            <a href="#" class="btn btn--primary btn--sm">Coming soon</a>
-          </article>
-        </div>
+            <a href="#" class="guide__cta">Coming soon</a>
+          </li>
+        </ul>
       </div>
     </section>
 
     <!-- ======================================================================
-         8. PULL QUOTE
+         PULL QUOTE
     ======================================================================= -->
     <section class="quote">
-      <div class="container">
+      <div class="wrap">
         <blockquote data-reveal>
-          <span class="quote__mark">“</span>
-          Eating well shouldn't feel like a full-time job. Keep it simple,
-          stay consistent, and let food work <em>for</em> you.
+          <span class="quote__mark" aria-hidden="true">&ldquo;</span>
+          Eating well shouldn't feel like a second job. Keep it simple, stay
+          consistent, and let food work <em>for</em> you.
+          <cite>— Yanelly</cite>
         </blockquote>
       </div>
     </section>
 
     <!-- ======================================================================
-         9. FAQ  (click a question to expand)
-         Copy a <details class="faq__item"> block to add a new question.
+         FAQ
     ======================================================================= -->
-    <section class="section faq" id="faq">
-      <div class="container">
-        <header class="section__head" data-reveal>
-          <span class="kicker">Good to know</span>
-          <h2 class="section__title">Common questions</h2>
-        </header>
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="sec-head" data-reveal>
+          <span class="sec-num">06</span>
+          <span class="sec-label">Good to know</span>
+          <h2 class="sec-title">Common questions</h2>
+        </div>
 
-        <div class="faq__list" data-reveal>
+        <div class="faq" data-reveal>
           <details class="faq__item">
             <summary>Is this medical or personalized nutrition advice?</summary>
-            <p>No — everything here is general educational content to help you build
-            good habits. For individualized medical nutrition therapy, work with a
-            registered dietitian one-on-one.</p>
+            <p>No — everything here is general educational content. For
+            individualized medical nutrition therapy, work with a registered
+            dietitian one-on-one.</p>
           </details>
           <details class="faq__item">
             <summary>Do I have to count calories or macros?</summary>
-            <p>Not at all. The balanced-plate method is designed to work without
-            tracking. If you ever want to dial things in further, tracking is just
-            one optional tool — not a requirement.</p>
+            <p>Not at all. The balanced-plate method works without tracking.
+            Tracking is just one optional tool — never a requirement.</p>
           </details>
           <details class="faq__item">
-            <summary>Can I eat the foods I love?</summary>
-            <p>Yes. No food is off-limits. It's about your overall pattern, not any
-            single meal — balance and consistency beat restriction every time.</p>
+            <summary>Can I still eat the foods I love?</summary>
+            <p>Yes. No food is off-limits. It's your overall pattern that matters,
+            not any single meal. Balance beats restriction every time.</p>
           </details>
           <details class="faq__item">
             <summary>Are the guides really free?</summary>
-            <p>Yep. The guides are free to download. Down the road there may be
-            optional premium resources, but the fundamentals will always be free.</p>
+            <p>Yep. The fundamentals will always be free. There may be optional
+            premium resources down the road, but not the basics.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         10. CONNECT / SOCIAL + EMAIL
+         CONNECT
     ======================================================================= -->
-    <section class="section connect" id="connect">
-      <div class="container connect__inner" data-reveal>
-        <span class="kicker">Stay in touch</span>
-        <h2 class="section__title">Let's connect</h2>
-        <p class="section__intro">
-          Follow along for daily nutrition tips, meals, and gym content — and be
-          first to know when new guides drop.
-        </p>
-
-        <div class="connect__links">
-          <a class="social" href="https://instagram.com/yanellyfuels" target="_blank" rel="noopener">
-            <span class="social__icon">📸</span> Instagram
-          </a>
-          <a class="social" href="https://instagram.com/teamfortitude_" target="_blank" rel="noopener">
-            <span class="social__icon">💪</span> Team Fortitude
-          </a>
-          <a class="social" href="mailto:hello@yanellyfuels.com">
-            <span class="social__icon">✉️</span> Email me
-          </a>
+    <section class="section section--alt" id="connect">
+      <div class="wrap connect">
+        <div class="connect__intro" data-reveal>
+          <span class="sec-num">07</span>
+          <h2 class="sec-title">Let's connect</h2>
+          <p>
+            Follow along for daily nutrition tips, meals, and gym content — and
+            be first to know when new guides drop.
+          </p>
+          <ul class="connect__links">
+            <li><a href="https://instagram.com/yanellyfuels" target="_blank" rel="noopener">Instagram <span>&rarr;</span></a></li>
+            <li><a href="https://instagram.com/teamfortitude_" target="_blank" rel="noopener">Team Fortitude <span>&rarr;</span></a></li>
+            <li><a href="mailto:hello@yanellyfuels.com">Email <span>&rarr;</span></a></li>
+          </ul>
         </div>
 
-        <!-- Email signup. For now it shows a thank-you. To actually collect
-             emails, connect it to a free tool (Kit/ConvertKit, Mailchimp, Beehiiv)
-             by pasting their embed snippet in place of this form. -->
-        <form class="signup" id="signup-form">
+        <form class="signup" id="signup-form" data-reveal>
           <label for="email" class="signup__label">Join the email list</label>
           <div class="signup__row">
             <input type="email" id="email" name="email" placeholder="you@email.com" required />
-            <button type="submit" class="btn btn--primary">Sign up</button>
+            <button type="submit" class="btn">Sign up</button>
           </div>
           <p class="signup__note" id="signup-note" hidden></p>
         </form>
@@ -439,11 +414,8 @@
        FOOTER
   ========================================================================= -->
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <p class="footer__logo">Yanelly<span>Fuels</span> 🥑🍓</p>
-        <p class="footer__tag">Nutrition, made simple.</p>
-      </div>
+    <div class="wrap footer__inner">
+      <p class="footer__logo">Yanelly Fuels</p>
       <nav class="footer__nav">
         <a href="#about">About</a>
         <a href="#basics">Basics</a>
@@ -452,9 +424,8 @@
         <a href="#connect">Connect</a>
       </nav>
       <div class="footer__legal">
-        <p>Educational content only — not medical or individualized nutrition advice.</p>
-        <p><em>1:1 services coming soon.</em></p>
-        <p class="footer__copy">© <span id="year"></span> Yanelly Garza</p>
+        <p>Educational content only — not medical or individualized nutrition advice. 1:1 services coming soon.</p>
+        <p>© <span id="year"></span> Yanelly Garza</p>
       </div>
     </div>
   </footer>
