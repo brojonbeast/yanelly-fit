@@ -4,3 +4,10 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# Tooling for the visual self-review (installed locally, not committed)
+node_modules/
+package-lock.json
+
+# Generated screenshots from the review script
+review/
