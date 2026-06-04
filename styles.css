@@ -135,7 +135,7 @@ a { color: var(--ink); text-decoration: none; }
 .optin__success-msg { font-size: 1.05rem; color: var(--ink); }
 .optin--stacked .optin__fields { flex-direction: column; }
 .optin--stacked .optin__fields input,
-.optin--stacked .optin__fields .btn { width: 100%; }
+.optin--stacked .optin__fields .btn { width: 100%; flex: 0 0 auto; }
 
 /* ===========================================================================
    NAVIGATION
@@ -451,7 +451,7 @@ a { color: var(--ink); text-decoration: none; }
   .nav__links a { padding: 13px 0; border-bottom: 1px solid #cbbfa6; }
 
   .optin__fields { flex-direction: column; }
-  .optin__fields input, .optin__fields .btn { width: 100%; }
+  .optin__fields input, .optin__fields .btn { width: 100%; flex: 0 0 auto; }
   .footer__inner { grid-template-columns: 1fr; }
   .branch--hero { display: none; }
 }
