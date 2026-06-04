@@ -1,0 +1,43 @@
+# Automatically publishes the website to GitHub Pages whenever changes are
+# pushed to the main branch. You only need to set this up once:
+#
+#   GitHub repo  →  Settings  →  Pages  →  "Build and deployment"
+#   Source: "GitHub Actions"
+#
+# After that, every push to main updates the live site automatically.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # lets you run it manually from the Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy at a time
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: . # the whole folder is the site (it's just static files)
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
