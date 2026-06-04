@@ -89,11 +89,19 @@
              Replace images/yanelly.jpg with her real photo (portrait works best). -->
         <div class="hero__media" data-reveal>
           <div class="hero__photo">
+            <!-- If images/yanelly.jpg is missing, the image hides and the
+                 branded placeholder below shows instead (so it always looks
+                 intentional, never broken). -->
             <img
               src="images/yanelly.jpg"
               alt="Yanelly Garza"
-              onerror="this.classList.add('is-missing'); this.alt='Add your photo at images/yanelly.jpg';"
+              onerror="this.style.display='none'; this.nextElementSibling.hidden=false;"
             />
+            <div class="hero__photo-ph" hidden aria-hidden="true">
+              <span class="hero__photo-emoji">🥑🍓</span>
+              <p>Yanelly Garza</p>
+              <small>Lifting &amp; Fueling</small>
+            </div>
           </div>
           <span class="chip chip--1">🍓 High protein</span>
           <span class="chip chip--2">🥗 Balanced</span>

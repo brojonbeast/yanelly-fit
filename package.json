@@ -1,0 +1,20 @@
+{
+  "name": "yanelly-fit",
+  "version": "1.0.0",
+  "description": "A simple, fast landing page to help people simplify nutrition — built so that **Yanelly can keep growing it herself using Claude.**",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "review": "node review.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:38311/git/brojonbeast/yanelly-fit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "puppeteer": "^25.1.0"
+  }
+}

@@ -36,10 +36,15 @@ if (nav) {
 }
 
 /* ---- 3. Scroll reveal ----------------------------------------------------
-   Adds the "is-in" class to each [data-reveal] element as it scrolls into
-   view, which triggers the fade-and-rise animation defined in styles.css.    */
+   Elements with [data-reveal] start hidden and fade/rise in as you reach them.
+   This is purely decorative, so it is built to FAIL SAFE: content can never
+   stay invisible. Anything on screen shows immediately, and a backstop timer
+   reveals everything shortly after load even if the observer never fires.     */
 const revealEls = document.querySelectorAll("[data-reveal]");
-if ("IntersectionObserver" in window && revealEls.length) {
+const showAll = () => revealEls.forEach((el) => el.classList.add("is-in"));
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (revealEls.length && "IntersectionObserver" in window && !reduceMotion) {
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
@@ -49,12 +54,21 @@ if ("IntersectionObserver" in window && revealEls.length) {
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    { threshold: 0, rootMargin: "0px 0px -8% 0px" }
   );
   revealEls.forEach((el) => observer.observe(el));
+
+  // Safety nets so nothing is ever stuck hidden:
+  const revealInView = () =>
+    revealEls.forEach((el) => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.95) el.classList.add("is-in");
+    });
+  revealInView();                              // show whatever is on screen now
+  window.addEventListener("load", revealInView); // ...and again once fully loaded
+  setTimeout(showAll, 2500);                    // backstop: reveal everything
 } else {
-  // No IntersectionObserver support → just show everything
-  revealEls.forEach((el) => el.classList.add("is-in"));
+  // No observer support, or the visitor prefers reduced motion → show it all
+  showAll();
 }
 
 /* ---- 4. Email signup ----------------------------------------------------

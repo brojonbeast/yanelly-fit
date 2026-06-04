@@ -100,4 +100,21 @@ The site is free now; here's the typical path creators take:
 
 ---
 
+## 🔍 Visual self-review (for whoever edits the code)
+There's a small script that renders the site in a real headless browser, checks
+for JavaScript errors and layout problems (like sideways-scroll overflow), and
+saves screenshots — so changes can be eyeballed before going live, without
+guessing.
+
+```bash
+npm install      # one-time: installs the headless browser
+npm run review   # renders the site, prints a report, writes screenshots
+```
+
+Screenshots land in `review/` (`desktop.png`, `mobile.png`, plus `-fold.png`
+above-the-fold versions). The script lives in `review.mjs`. Claude runs this
+automatically after making visual changes to catch issues itself.
+
+---
+
 Made with 🥑 — educational content only, not individualized medical advice.
