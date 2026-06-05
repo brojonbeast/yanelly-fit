@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Yanelly Fuels — Getting Started With Your Website</title>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap");
+  @page { size: letter; margin: 56px 62px; }
+  :root{
+    --paper:#FBF6EC; --ink:#26331F; --ink-2:#55604A; --green:#38502F; --leaf:#5E7B3E;
+    --blush:#E7B6AC; --berry:#BC6157; --card:#F1ECDD; --sage:#EAF0E0;
+    --display:"Fraunces",Georgia,serif; --body:"Hanken Grotesk",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--body);color:var(--ink);font-size:13.5px;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact;background:#fff;}
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.12;letter-spacing:-0.01em;}
+  .meta{font-family:var(--body);font-weight:600;font-size:10px;text-transform:uppercase;letter-spacing:0.16em;color:var(--leaf);margin-bottom:8px;}
+  h1{font-size:36px;margin-bottom:8px;}
+  h1 em{font-style:italic;color:var(--berry);}
+  .intro{font-size:14px;color:var(--ink-2);margin:14px 0 4px;max-width:60ch;}
+  .rule{height:2px;background:var(--ink);margin:18px 0 8px;}
+  .steps{list-style:none;counter-reset:step;margin-top:6px;}
+  .step{counter-increment:step;position:relative;padding:16px 0 16px 52px;border-bottom:1px solid #E4DBC8;break-inside:avoid;}
+  .step:last-child{border-bottom:none;}
+  .step::before{content:counter(step);position:absolute;left:0;top:15px;width:34px;height:34px;background:var(--green);color:var(--paper);border-radius:50%;font-family:var(--display);font-size:17px;display:grid;place-content:center;}
+  .step h3{font-size:17px;margin-bottom:3px;}
+  .step p{margin:4px 0;color:var(--ink-2);}
+  .step .path{font-family:var(--body);font-weight:600;color:var(--green);background:var(--card);padding:1px 6px;border-radius:5px;font-size:12.5px;}
+  b{color:var(--ink);}
+  .tip{background:var(--sage);border-left:3px solid var(--leaf);border-radius:0 8px 8px 0;padding:9px 13px;margin:9px 0 2px;font-size:12.5px;color:var(--ink-2);}
+  .tip b{color:var(--green);}
+  .warn{background:#FBEAE5;border-left:3px solid var(--berry);border-radius:0 8px 8px 0;padding:9px 13px;margin:9px 0 2px;font-size:12.5px;color:var(--ink-2);}
+  .warn b{color:var(--berry);}
+  h2{font-size:20px;margin:22px 0 6px;padding-top:16px;border-top:2px solid var(--ink);}
+  .later{background:var(--card);border-radius:10px;padding:14px 18px;margin-top:8px;break-inside:avoid;}
+  .later p{color:var(--ink-2);font-size:12.5px;margin:4px 0;}
+  .closing{margin-top:20px;padding:16px 20px;background:var(--green);color:var(--paper);border-radius:12px;break-inside:avoid;}
+  .closing h3{color:var(--paper);font-size:18px;margin-bottom:4px;}
+  .closing p{color:rgba(251,246,236,0.9);font-size:13px;}
+  .words{font-size:12px;color:var(--ink-2);margin-top:10px;}
+  .words b{color:var(--green);}
+  .foot{margin-top:22px;padding-top:12px;border-top:2px solid var(--ink);font-family:var(--display);font-size:15px;}
+  .foot b{color:var(--leaf);}
+</style>
+</head>
+<body>
+  <p class="meta">Your Website · Getting Started</p>
+  <h1>Welcome to <em>your</em> website 🥑</h1>
+  <p class="intro">Hi Yanelly! This is everything you need to take ownership of your site and start making it your own — <b>no tech experience required.</b> Just follow the steps in order. Each one is a few clicks, and Jon is one message away if you ever get stuck.</p>
+  <div class="rule"></div>
+
+  <ol class="steps">
+    <li class="step">
+      <h3>Create your free GitHub account</h3>
+      <p>Go to <span class="path">github.com</span> and click <b>Sign up</b>. GitHub is just the place your website's files live online — think of it as the filing cabinet for your site.</p>
+      <p>Then <b>send Jon your new username</b> so he can hand the website over to you.</p>
+      <div class="tip"><b>Tip:</b> write your username and password down somewhere safe — you'll use this account from now on.</div>
+    </li>
+
+    <li class="step">
+      <h3>Accept your website</h3>
+      <p>Jon will transfer the website to your account. You'll get an <b>email (and a GitHub notification)</b> asking you to accept it — just click <b>Accept</b>.</p>
+      <p>That's it — the website is now officially yours. 🎉</p>
+    </li>
+
+    <li class="step">
+      <h3>Switch your website on</h3>
+      <p>Open your project on GitHub, click <span class="path">Settings</span>, then <span class="path">Pages</span> on the left. Under <b>"Source,"</b> choose <span class="path">GitHub Actions</span>. Also make sure the project is set to <b>Public</b>.</p>
+      <p>Give it a minute or two — your site will be live at:</p>
+      <p><span class="path">https://[your-username].github.io/yanelly-fit/</span></p>
+      <div class="warn"><b>Important:</b> your web address includes your username, so it'll be a little different from before. Once it's live, <b>update the link in your Instagram bio</b> to this new address.</div>
+    </li>
+
+    <li class="step">
+      <h3>Add Jon as your helper</h3>
+      <p>So Jon can jump in whenever you need a hand: go to <span class="path">Settings → Collaborators → Add people</span>, and type in his username:</p>
+      <p><span class="path">brojonbeast</span></p>
+    </li>
+
+    <li class="step">
+      <h3>Connect your AI assistant (ChatGPT Codex)</h3>
+      <p>This is the magic part — your AI that edits the website for you. In <b>ChatGPT</b>, open <b>Codex</b>, click <b>Connect to GitHub</b>, approve the pop-up, and choose your <span class="path">yanelly-fit</span> project.</p>
+      <div class="tip"><b>Heads up:</b> Codex comes with the paid ChatGPT plans (Plus, Pro, or Business). Once it's connected, you're ready to build.</div>
+    </li>
+
+    <li class="step">
+      <h3>Make changes anytime — just ask</h3>
+      <p>Tell Codex what you want in plain English, like:</p>
+      <p><em>"Add a recipe card for protein pancakes"</em> &nbsp;or&nbsp; <em>"Change my headline to ___."</em></p>
+      <p>Codex prepares the change and shows it to you as a <b>"pull request"</b> (a suggested update). When you like it, click <b>Merge</b> — and your live site updates in about a minute.</p>
+      <div class="tip"><b>You can't break anything.</b> Nothing changes on your real website until you click Merge — so feel free to experiment. You can also edit text right on GitHub using the little <b>pencil</b> icon.</div>
+    </li>
+  </ol>
+
+  <h2>Coming soon (with Jon's help)</h2>
+  <div class="later">
+    <p>Nothing to do yet — just so you know what's next:</p>
+    <p>📧 <b>Your email tool (Kit)</b> — to collect subscribers and automatically send your free Balanced Plate Cheat Sheet.</p>
+    <p>🌐 <b>Your own domain</b> (like yanellyfuels.com) — set up through Cloudflare, under your account.</p>
+    <p>We'll set both up together when you're ready, all under your own accounts so everything stays yours.</p>
+  </div>
+
+  <p class="words"><b>A few words you'll see:</b> &nbsp; <b>Repository / repo</b> = the folder holding your website. &nbsp; <b>Pull request</b> = a suggested change to review. &nbsp; <b>Merge</b> = approving that change so it goes live.</p>
+
+  <div class="closing">
+    <h3>You've got this. 🍓</h3>
+    <p>This is your website now — yours to grow however you want. Take it one step at a time, and message Jon anytime you hit a snag. He's still on the team.</p>
+  </div>
+
+  <div class="foot">Yanelly<b>Fuels</b> &nbsp;·&nbsp; Nutrition, made simple.</div>
+</body>
+</html>
