@@ -1,4 +1,4 @@
-Put images here.
+Put images here. 
 
 For the hero photo, save Yanelly's picture in this folder named exactly:
     yanelly.jpg
